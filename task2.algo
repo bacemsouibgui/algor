@@ -1,0 +1,60 @@
+ALGORITHM car-rental
+VAR
+nb_km, nb_days: INTEGER;
+cost_by_km, cost_by_days: FLOAT;
+
+CONST
+r1: FLOAT:=0.7;
+r2: FLOAT:= 0.4;
+r3: FLOAT:= 0.2;
+p_d: FLOAT:= 100;
+ins: FLOAT:= 0.3;
+vat: FLOAT:= 0.18;
+
+BEGIN
+write("Give the total number of kilometres");
+Read(nb_km);
+
+write("Give the number of days of location");
+Read(nb_days);
+
+// cost for rental by km
+// calculate cost by km
+
+IF (nb_km <100) THEN
+    cost_by_km:= nb_km * r1
+
+ELSE_IF (nb_km <1000) THEN
+
+  cost_by_km:= (nb_km-100)* r2 + 100 * r1;
+
+  ELSE 
+  cost_by_km:= 100 * r1 + 900 * r2 + (nb_km- 1000) * r3;
+
+END_IF
+
+// adding insurance
+cost_by_km:= cost_by_km + (nb_days* ins);
+// adding vat
+cost_by_km:= cost_by_km + (cost_by_km * vat);
+
+
+// cost for daily rate
+// calculate the cost by day
+cost_by_days:= nb_days * (p_d + ins);
+// adding vat
+cost_by_days:= cost_by_days * (1+vat);
+
+// better choice
+
+IF (cost_by_km < cost_by_days) THEN
+    
+    write(" it is better to choose the rental by km. and the cost is", cost_by_km);
+
+ELSE
+
+write("it is better to choose the rental by days. and the cost is", cost_by_days)
+
+END_IF
+
+END

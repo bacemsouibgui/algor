@@ -1,0 +1,24 @@
+ALGORITHM SUM
+VAR
+    i, SUM: INTEGER;
+    T : ARRAY_OF INTEGER[10];
+BEGIN
+    SUM:=0;
+
+    FOR i FROM 0 TO 9 STEP 1  DO
+        
+        write("Enter a number")
+        Read(T[i])
+    
+    IF (T[i] % 2 = 0) THEN
+        
+        SUM:= SUM + T[i]
+
+    ELSE
+    SUM:= SUM - T[i]
+    END_IF
+
+    END_FOR
+write ("the difference is", SUM)
+
+END

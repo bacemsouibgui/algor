@@ -1,0 +1,15 @@
+ALGORITHM factorial
+VAR
+    N,F,i: INTEGER
+BEGIN
+    
+    F:=1;
+    write("enter the number");
+    Read(N);
+
+    FOR i FROM 1 TO N STEP 1  DO
+        F:= F*i
+    END_FOR
+    write("the factorial of", N "is: ",F)
+
+END

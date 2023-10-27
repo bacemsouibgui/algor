@@ -1,0 +1,16 @@
+ALGORITHM char
+VAR
+    c: CHAR
+BEGIN
+    
+    write("Enter the character", c)
+    Read(c)
+
+    IF (c>= 65 AND c<= 90) THEN
+    write("this is an UpperCase letter")
+    ELSE_IF (c>= 97 AND 122) THEN
+    write("this is a lowerCase letter")
+    ELSE write("This is not a letter");
+
+    END_IF
+END
